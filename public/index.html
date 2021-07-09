@@ -47,9 +47,9 @@
   <script type="text/javascript">
     (function () {
       if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("./service-worker.js", { scope: "/" })
-          .then(() => console.log("Service Worker registered successfully."))
-          .catch(error => console.log("Service Worker registration failed:", error));
+        navigator.serviceWorker.register("./servicefile.js", { scope: "/" })
+          .then(() => console.log("Service file registration completed."))
+          .catch(error => console.log("Try again:", error));
       }
     })();
   </script>
