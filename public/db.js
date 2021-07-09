@@ -1,19 +1,18 @@
-let db;
-// create a new db request for a "budget" database.
+let new_database;
 const request = indexedDB.open("budget", 1);
 
 request.onupgradeneeded = function (event) {
   // create object store called "pending" and set autoIncrement to true
-  const db = event.target.result;
-  db.createObjectStore("pending", { autoIncrement: true });
+  const new_database = event.target.result;
+  new_database.createObjectStore("pending", { autoIncrement: true });
 };
 
 request.onsuccess = function (event) {
-  db = event.target.result;
+  new_database = event.target.result;
 
   // check if app is online before reading from db
   if (navigator.onLine) {
-    checkDatabase();
+     all_updates();
   }
 };
 
@@ -23,7 +22,7 @@ request.onerror = function (event) {
 
 function saveRecord(record) {
   // create a transaction on the pending db with readwrite access
-  const transaction = db.transaction(["pending"], "readwrite");
+  const transaction = new_database.transaction(["pending"], "readwrite");
 
   // access your pending object store
   const store = transaction.objectStore("pending");
@@ -32,9 +31,9 @@ function saveRecord(record) {
   store.add(record);
 }
 
-function checkDatabase() {
+function all_updates() {
   // open a transaction on your pending db
-  const transaction = db.transaction(["pending"], "readwrite");
+  const transaction = new_database.transaction(["pending"], "readwrite");
   // access your pending object store
   const store = transaction.objectStore("pending");
   // get all records from store and set to a variable
@@ -53,7 +52,7 @@ function checkDatabase() {
         .then(response => response.json())
         .then(() => {
           // if successful, open a transaction on your pending db
-          const transaction = db.transaction(["pending"], "readwrite");
+          const transaction = new_database.transaction(["pending"], "readwrite");
 
           // access your pending object store
           const store = transaction.objectStore("pending");
@@ -66,4 +65,4 @@ function checkDatabase() {
 }
 
 // listen for app coming back online
-window.addEventListener("online", checkDatabase);
+window.addEventListener("online", all_updates);
