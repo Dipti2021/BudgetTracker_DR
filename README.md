@@ -30,7 +30,7 @@ For this application, the user can adding and/or subtracting his expenses and de
  The web app created can be run either from the server using __localhost:3001__ or through the heroku link. 
  
 
-   ![image3](public/tech_blog.gif)
+   ![image3](public/budget.png)
    
    
 
