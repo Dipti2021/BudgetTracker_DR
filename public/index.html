@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#317EFB">
   <link rel="shortcut icon" href="icons/icon-192x192.png" type="image/x-icon">
-  <link rel="manifest" href="/manifest.webmanifest" /> <!--Linked the webmanifiest to the file-->
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css">
 
   <title>Budget Tracker</title>
 </head>
+
 <body>
   <div class="wrapper">
     <div class="total">
@@ -33,11 +36,11 @@
           <th>Amount</th>
         </thead>
         <tbody id="tbody">
-          
+
         </tbody>
       </table>
     </div>
-    
+
     <canvas id="myChart"></canvas>
   </div>
 
@@ -47,7 +50,7 @@
   <script type="text/javascript">
     (function () {
       if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("./servicefile.js", { scope: "/" })
+        navigator.serviceWorker.register("./service-worker.js", { scope: "/" })
           .then(() => console.log("Service file registration completed."))
           .catch(error => console.log("Try again later:", error));
       }
@@ -55,4 +58,5 @@
   </script>
   <script src="index.js"></script>
 </body>
+
 </html>
