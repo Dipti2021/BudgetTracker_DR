@@ -1,5 +1,6 @@
 let transactions = [];
 let myChart;
+// const fetch = require("node-fetch");
 
 fetch("/api/transaction")
   .then(response => {
