@@ -1,4 +1,4 @@
-# BudgetTracker_DR
+# Online/ Offline BudgetTracker_DR
 
 ![License: Dipti](https://img.shields.io/badge/Coder-Dipti'sCode-yellow.svg)
 ![License: GPL v3](https://img.shields.io/badge/License-MIT-pink.svg)
@@ -15,21 +15,21 @@
 * [Credits](#credits)
  
  ## Introduction 
-For this application, the user can adding and/or subtracting his expenses and deposits to a given budgetsheet.For this application,I have used mongo DB and deployed the data to cloud using Mongo BD Atlas and is  finally deployed on Heroku.
+For this application, the user can adding and/or subtracting his expenses and deposits to a given budgetsheet.It can be done both when you are online or offline. The concept of PWA's has been used _webmanifest_ file is helpful in working in the offline mode. For this application,I have used mongo DB and deployed the data to cloud using Mongo BD Atlas and is  finally deployed on Heroku._IndexDB_ in the application stores the budget which is further deployed in the heroku app.
 
    
  ## Dependencies and Tools used
    * In order to run the app, I installed the required dependencies using npm install.
    * The app can run through localhost or can be used through the heroku deployed URL
    * All the information is seeded in the mongoDB database 
-   * The I connected the dataase to Mongo DB Atlas.Atlas handles all the complexity of deploying, managing, and      healing your deployments on the AWS cloud service provider.
-   *  Along with it,I deployed the app through __Heroku__ web host and Configured an additional add on        __MONGODB_URI__ in order to relate the code and database._
+   * The I connected the dataase to __Mongo DB Atlas__.Atlas handles all the complexity of deploying, managing, and healing your deployments on the AWS cloud service provider.
+   *  Along with it,I deployed the app through __Heroku__ web host and Configured an additional add on  __MONGODB_URI__ in order to relate the code and database.
 
  
  ## App Presentation
  The web app created can be run either from the server using __localhost:3001__ or through the heroku link. 
  
-
+ 
    ![image3](public/budget.png)
    
    
