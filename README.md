@@ -30,11 +30,11 @@ For this application, the user can adding and/or subtracting his expenses and de
  The web app created can be run either from the server using __localhost:3001__ or through the heroku link. You can also see how the online and offline versions of the same app may look like
    * ONLINE VIEW
    
-    ![image3](public/online.png)
+   ![image3](public/online.png)
     
    * OFFLINE VIEW
 
-    ![image3](public/offline.png)
+   ![image3](public/offline.png)
    
 
  ## Deployment
